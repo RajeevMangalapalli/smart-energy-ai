@@ -1,22 +1,16 @@
+#ingestion.py
 import pandas as pd
-FILE_PATH = r"C:\Users\rajee\Desktop\VS code\smart-energy-ai\data\raw\time_series_60min_singleindex.csv"
+from pathlib import Path
+
+FILE_PATH = Path("smart-energy-ai/data/raw/time_series_60min_singleindex.csv")
+OUTPUT_PATH = Path("smart-energy-ai/data/processed/DE_load_daily.csv")
 
 
 def load_data(file_path : str) -> pd.DataFrame:
     df = pd.read_csv(file_path)
     return df
 
-df = load_data(FILE_PATH)
 
-
-# Function to select timestamp and DE load columns
-"""
-The following features are selected (All Deutschland related features):
-
-DE_load_actual_entsoe_transparency
-timestamp
-
-"""
 def feature_selection(df: pd.DataFrame) -> pd.DataFrame:
     df_selected = df[["utc_timestamp", "DE_load_actual_entsoe_transparency"]]
 
@@ -25,8 +19,31 @@ def feature_selection(df: pd.DataFrame) -> pd.DataFrame:
         "utc_timestamp": "timestamp",
         "DE_load_actual_entsoe_transparency": "load_mw"
     })
+    
+    #Convert timestamp to datetime format
+    df_selected["timestamp"] = pd.to_datetime(df_selected["timestamp"])
+    
+    # Set timestamp as index
+    df_selected.set_index("timestamp", inplace=True)
 
-    return df_selected
+    return df_selected.sort_index()
 
-df_selected = feature_selection(df)
-print(df_selected.head())
+def preprocessing(df: pd.DataFrame) -> pd.DataFrame:
+    df["load_mw"] = df["load_mw"].interpolate(method="time")
+
+    #Resample to daily
+    df_daily = df.resample("D").mean()
+    return df_daily
+
+
+if __name__ == "__main__":
+    df = load_data(FILE_PATH)
+    df_selected = feature_selection(df)
+    df_daily = preprocessing(df_selected)
+    df_daily.to_csv(OUTPUT_PATH)
+    
+
+    print(f"Data has been processed and saved to {OUTPUT_PATH}")
+
+
+
