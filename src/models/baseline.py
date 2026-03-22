@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import joblib
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_squared_error, root_mean_squared_error
 from pathlib import Path
@@ -72,6 +73,15 @@ print(f"RMSE           : 7248 MW")
 print(f"RMSE % of mean : {7248 / train_load.mean() * 100:.1f}%") #13.0%
 
 
+#Saving the model predictions
+forecast = pd.DataFrame({
+    "timestamp": test.index,
+    "actual": test_load.values,
+    "sARIMA_predicted": forecast.values
+})
+
+forecast.to_csv("smart-energy-ai/data/processed/sARIMA_predictions.csv", index = False)
+
 #Saving the metrics
 metrics = {
     "model" : "SARIMA (0,0,3)(0,0,2,7)",
@@ -84,7 +94,7 @@ with open("smart-energy-ai/data/processed/sarima_metrics.json","w") as f:
     json.dump(metrics, f, indent = 2)
 
 
-
+joblib.dump(model, "smart-energy-ai/src/data/s-arima.joblib")
 
 
 
