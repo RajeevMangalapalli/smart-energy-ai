@@ -9,6 +9,7 @@ from pathlib import Path
 FILE_PATH = Path("smart-energy-ai/data/processed/DE_load_daily.csv")
 OUTPUT_PATH = Path("smart-energy-ai/data/processed/DE_load_daily_features_time_features.csv")
 df = load_data(FILE_PATH)
+df = df.dropna().reset_index(drop=True)
 
 def create_time_features(df: pd.DataFrame)-> pd.DataFrame:
     #Lag features
