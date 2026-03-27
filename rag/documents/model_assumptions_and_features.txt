@@ -1,0 +1,16 @@
+MODEL ASSUMPTIONS AND FEATURES
+
+This document outlines the engineering approach and underlying assumptions for the energy demand forecasting model based on the German Daily Load dataset.
+
+Engineered Features:
+To capture the temporal dynamics of electricity demand, the following features were derived:
+- Lag Features (lag_1, lag_7): These capture the autocorrelation in the data. lag_1 represents yesterday's demand, while lag_7 represents the demand from the same day of the previous week, accounting for weekly cycles.
+- Rolling Means (rolling_mean_7, rolling_mean_30): These provide a smoothed representation of recent trends, helping the model distinguish between short-term noise and medium-term shifts in consumption levels.
+
+Key Assumptions:
+1. Periodicity: The model assumes that historical seasonal patterns (weekly and yearly) will persist into the future.
+2. Continuity: It is assumed that there are no sudden, permanent structural shifts in the energy market (e.g., total industrial shutdowns) during the period being forecast.
+3. Autocorrelation: The model relies on the assumption that the most recent demand values are the strongest predictors of the immediate future.
+
+Feature Utility:
+By incorporating both short-term lags (1-day) and weekly lags (7-days), the model can effectively adjust for both immediate fluctuations and the inherent difference between workdays and weekends.

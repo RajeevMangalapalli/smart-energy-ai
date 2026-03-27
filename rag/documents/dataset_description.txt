@@ -1,0 +1,18 @@
+DATASET DESCRIPTION: GERMAN DAILY ELECTRICITY LOAD
+
+Overview:
+This dataset provides a historical record of the daily electricity demand (load) in Germany. It is designed for time-series analysis and the development of forecasting models to predict future energy needs.
+
+Data Source:
+The data originates from historical records of the German power grid (typically sourced from ENTSO-E or similar transparency platforms).
+
+Key Information:
+- Frequency: Daily (aggregated from hourly observations).
+- Time Range: January 2015 to approximately September 2020.
+- Region: Germany (National level).
+
+Column Definitions:
+1. timestamp: The date of the observation in ISO 8601 format.
+2. load_mw: The total electricity consumption across the German grid for that day, measured in Megawatts (MW).
+
+This dataset is particularly useful for studying long-term trends, seasonal cycles (weekly and annual), and the impact of holidays or external weather events on national energy consumption.

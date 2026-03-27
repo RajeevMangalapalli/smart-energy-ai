@@ -1,0 +1,17 @@
+ENERGY DEMAND FORECASTING: CORE CONCEPTS
+
+Introduction:
+Energy demand forecasting is the predictive science of estimating future electricity consumption. It is a critical component of power system management, ensuring that supply meets demand in real-time while maintaining grid stability.
+
+Types of Forecasting:
+- Short-Term: Hours to days (Operational planning).
+- Medium-Term: Weeks to months (Maintenance scheduling).
+- Long-Term: Years (Infrastructure and policy planning).
+
+Primary Drivers of Energy Demand:
+1. Seasonality: Energy usage exhibits strong periodic patterns. Daily patterns reflect human routines, weekly patterns show lower demand on weekends, and annual patterns highlight heating/cooling needs.
+2. Weather: Temperature is the most significant exogenous variable. Extreme cold increases heating load, while extreme heat increases air conditioning load.
+3. Economic Activity: Industrial production and commercial operating hours significantly impact the base load.
+
+The Importance of Accuracy:
+Overestimating demand leads to wasted energy and higher costs, while underestimating can cause grid instability or blackouts. Modern forecasting leverages historical patterns (autocorrelation) and external features to minimize error.
