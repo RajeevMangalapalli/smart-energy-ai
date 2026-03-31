@@ -143,4 +143,4 @@ if __name__ == "__main__":
     store_in_vecdb(chunks)
     save_chunk_mapping(chunks)
 
-    print("Sucessful")
+    print("Successful")
