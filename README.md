@@ -246,10 +246,10 @@ Sources: model_assumptions_and_features.txt, energy_forecasting_concepts.txt
 
 Detailed documentation is available in the project wiki:
 
-- [Wiki 1 — Data Pipeline and Feature Engineering]()
-- [Wiki 2 — Time Series Analysis and Model Selection]()
-- [Wiki 3 — RAG System Architecture]()
-- [Wiki 4 — Running and Extending the Project]()
+- [Wiki 1 — Data Pipeline and Feature Engineering](https://github.com/RajeevMangalapalli/smart-energy-ai/wiki)
+- [Wiki 2 — Time Series Analysis and Model Selection](https://github.com/RajeevMangalapalli/smart-energy-ai/wiki/Time-Series-Analysis-and-Model-Selection)
+- [Wiki 3 — RAG System Architecture](https://github.com/RajeevMangalapalli/smart-energy-ai/wiki/RAG-SYSTEM)
+- [Wiki 4 — Running and Extending the Project](https://github.com/RajeevMangalapalli/smart-energy-ai/wiki/Extending-the-project)
 
 ---
 
