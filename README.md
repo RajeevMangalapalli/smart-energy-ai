@@ -66,10 +66,6 @@ smart-energy-ai/
 │       ├── baseline.py
 │       ├── ml_model.py
 │       └── evaluate.py
-├── tests/
-│   ├── test_models.py
-│   └── test_rag.py
-├── requirements.txt
 └── README.md
 ```
 
@@ -250,10 +246,10 @@ Sources: model_assumptions_and_features.txt, energy_forecasting_concepts.txt
 
 Detailed documentation is available in the project wiki:
 
-- [Wiki 1 — Data Pipeline and Feature Engineering](wiki/data_pipeline.md)
-- [Wiki 2 — Time Series Analysis and Model Selection](wiki/time_series_and_model_selection.md)
-- [Wiki 3 — RAG System Architecture](wiki/rag_system.md)
-- [Wiki 4 — Running and Extending the Project](wiki/running_and_extending.md)
+- [Wiki 1 — Data Pipeline and Feature Engineering]()
+- [Wiki 2 — Time Series Analysis and Model Selection]()
+- [Wiki 3 — RAG System Architecture]()
+- [Wiki 4 — Running and Extending the Project]()
 
 ---
 
